@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestDBWpfModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TestDBWpfEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bets" EntityType="TestDBWpfModel1.Bets" />
+    <EntitySet Name="Bonuses" EntityType="TestDBWpfModel1.Bonuses" />
+    <EntitySet Name="collection" EntityType="TestDBWpfModel1.collection" />
+    <EntitySet Name="Employees" EntityType="TestDBWpfModel1.Employees" />
+    <EntitySet Name="Games" EntityType="TestDBWpfModel1.Games" />
+    <EntitySet Name="kaktusi" EntityType="TestDBWpfModel1.kaktusi" />
+    <EntitySet Name="logins" EntityType="TestDBWpfModel1.logins" />
+    <EntitySet Name="Players" EntityType="TestDBWpfModel1.Players" />
+    <EntitySet Name="sysdiagrams" EntityType="TestDBWpfModel1.sysdiagrams" />
+    <EntitySet Name="Transactions" EntityType="TestDBWpfModel1.Transactions" />
+    <EntitySet Name="users" EntityType="TestDBWpfModel1.users" />
+    <EntitySet Name="Vistavki" EntityType="TestDBWpfModel1.Vistavki" />
+    <AssociationSet Name="FK__Bets__game_id__03F0984C" Association="TestDBWpfModel1.FK__Bets__game_id__03F0984C">
+      <End Role="Games" EntitySet="Games" />
+      <End Role="Bets" EntitySet="Bets" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bets__player_id__04E4BC85" Association="TestDBWpfModel1.FK__Bets__player_id__04E4BC85">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="Bets" EntitySet="Bets" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bonuses__player___05D8E0BE" Association="TestDBWpfModel1.FK__Bonuses__player___05D8E0BE">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="Bonuses" EntitySet="Bonuses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_collection_kaktusi" Association="TestDBWpfModel1.FK_collection_kaktusi">
+      <End Role="kaktusi" EntitySet="kaktusi" />
+      <End Role="collection" EntitySet="collection" />
+    </AssociationSet>
+    <AssociationSet Name="FK_collection_Vistavki" Association="TestDBWpfModel1.FK_collection_Vistavki">
+      <End Role="Vistavki" EntitySet="Vistavki" />
+      <End Role="collection" EntitySet="collection" />
+    </AssociationSet>
+    <AssociationSet Name="FK_logins_users" Association="TestDBWpfModel1.FK_logins_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="logins" EntitySet="logins" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacti__playe__09A971A2" Association="TestDBWpfModel1.FK__Transacti__playe__09A971A2">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+    <EntitySet Name="Card" EntityType="TestDBWpfModel1.Card" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <EntitySet Name="HistoryMatches" EntityType="TestDBWpfModel1.HistoryMatches" />
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Bets">
+    <Key>
+      <PropertyRef Name="bet_id" />
+    </Key>
+    <Property Name="bet_id" Type="Int32" Nullable="false" />
+    <Property Name="player_id" Type="Int32" />
+    <Property Name="game_id" Type="Int32" />
+    <Property Name="bet_amount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="bet_time" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="outcome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Games" Relationship="TestDBWpfModel1.FK__Bets__game_id__03F0984C" FromRole="Bets" ToRole="Games" />
+    <NavigationProperty Name="Players" Relationship="TestDBWpfModel1.FK__Bets__player_id__04E4BC85" FromRole="Bets" ToRole="Players" />
+  </EntityType>
+  <EntityType Name="Bonuses">
+    <Key>
+      <PropertyRef Name="bonus_id" />
+    </Key>
+    <Property Name="bonus_id" Type="Int32" Nullable="false" />
+    <Property Name="player_id" Type="Int32" />
+    <Property Name="bonus_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bonus_amount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="bonus_date" Type="DateTime" Precision="0" />
+    <Property Name="expiration_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Players" Relationship="TestDBWpfModel1.FK__Bonuses__player___05D8E0BE" FromRole="Bonuses" ToRole="Players" />
+  </EntityType>
+  <EntityType Name="collection">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kaktus_id" Type="Int32" />
+    <Property Name="vistavka_id" Type="Int32" />
+    <NavigationProperty Name="kaktusi" Relationship="TestDBWpfModel1.FK_collection_kaktusi" FromRole="collection" ToRole="kaktusi" />
+    <NavigationProperty Name="Vistavki" Relationship="TestDBWpfModel1.FK_collection_Vistavki" FromRole="collection" ToRole="Vistavki" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Name="employee_id" Type="Int32" Nullable="false" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="job_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hire_date" Type="DateTime" Precision="0" />
+    <Property Name="salary" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Games">
+    <Key>
+      <PropertyRef Name="game_id" />
+    </Key>
+    <Property Name="game_id" Type="Int32" Nullable="false" />
+    <Property Name="game_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="game_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="min_bet" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="max_bet" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="Bets" Relationship="TestDBWpfModel1.FK__Bets__game_id__03F0984C" FromRole="Games" ToRole="Bets" />
+  </EntityType>
+  <EntityType Name="kaktusi">
+    <Key>
+      <PropertyRef Name="id_kaktus" />
+    </Key>
+    <Property Name="id_kaktus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Proishojdenie" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Instrukciya" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="collection" Relationship="TestDBWpfModel1.FK_collection_kaktusi" FromRole="kaktusi" ToRole="collection" />
+  </EntityType>
+  <EntityType Name="logins">
+    <Key>
+      <PropertyRef Name="id_login" />
+    </Key>
+    <Property Name="id_login" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="passwod" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="user_id" Type="Int32" />
+    <NavigationProperty Name="users" Relationship="TestDBWpfModel1.FK_logins_users" FromRole="logins" ToRole="users" />
+  </EntityType>
+  <EntityType Name="Players">
+    <Key>
+      <PropertyRef Name="player_id" />
+    </Key>
+    <Property Name="player_id" Type="Int32" Nullable="false" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="registration_date" Type="DateTime" Precision="0" />
+    <Property Name="balance" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="Bets" Relationship="TestDBWpfModel1.FK__Bets__player_id__04E4BC85" FromRole="Players" ToRole="Bets" />
+    <NavigationProperty Name="Bonuses" Relationship="TestDBWpfModel1.FK__Bonuses__player___05D8E0BE" FromRole="Players" ToRole="Bonuses" />
+    <NavigationProperty Name="Transactions" Relationship="TestDBWpfModel1.FK__Transacti__playe__09A971A2" FromRole="Players" ToRole="Transactions" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="transaction_id" />
+    </Key>
+    <Property Name="transaction_id" Type="Int32" Nullable="false" />
+    <Property Name="player_id" Type="Int32" />
+    <Property Name="transaction_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="transaction_amount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="transaction_time" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Players" Relationship="TestDBWpfModel1.FK__Transacti__playe__09A971A2" FromRole="Transactions" ToRole="Players" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id_user" />
+    </Key>
+    <Property Name="id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Balance" Type="Int32" />
+    <NavigationProperty Name="logins" Relationship="TestDBWpfModel1.FK_logins_users" FromRole="users" ToRole="logins" />
+  </EntityType>
+  <EntityType Name="Vistavki">
+    <Key>
+      <PropertyRef Name="id_vistavka" />
+    </Key>
+    <Property Name="id_vistavka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="location" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="awards" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="collection" Relationship="TestDBWpfModel1.FK_collection_Vistavki" FromRole="Vistavki" ToRole="collection" />
+  </EntityType>
+  <Association Name="FK__Bets__game_id__03F0984C">
+    <End Type="TestDBWpfModel1.Games" Role="Games" Multiplicity="0..1" />
+    <End Type="TestDBWpfModel1.Bets" Role="Bets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Games">
+        <PropertyRef Name="game_id" />
+      </Principal>
+      <Dependent Role="Bets">
+        <PropertyRef Name="game_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bets__player_id__04E4BC85">
+    <End Type="TestDBWpfModel1.Players" Role="Players" Multiplicity="0..1" />
+    <End Type="TestDBWpfModel1.Bets" Role="Bets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="player_id" />
+      </Principal>
+      <Dependent Role="Bets">
+        <PropertyRef Name="player_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bonuses__player___05D8E0BE">
+    <End Type="TestDBWpfModel1.Players" Role="Players" Multiplicity="0..1" />
+    <End Type="TestDBWpfModel1.Bonuses" Role="Bonuses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="player_id" />
+      </Principal>
+      <Dependent Role="Bonuses">
+        <PropertyRef Name="player_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_collection_kaktusi">
+    <End Type="TestDBWpfModel1.kaktusi" Role="kaktusi" Multiplicity="0..1" />
+    <End Type="TestDBWpfModel1.collection" Role="collection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kaktusi">
+        <PropertyRef Name="id_kaktus" />
+      </Principal>
+      <Dependent Role="collection">
+        <PropertyRef Name="kaktus_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_collection_Vistavki">
+    <End Type="TestDBWpfModel1.Vistavki" Role="Vistavki" Multiplicity="0..1" />
+    <End Type="TestDBWpfModel1.collection" Role="collection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vistavki">
+        <PropertyRef Name="id_vistavka" />
+      </Principal>
+      <Dependent Role="collection">
+        <PropertyRef Name="vistavka_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_logins_users">
+    <End Type="TestDBWpfModel1.users" Role="users" Multiplicity="0..1" />
+    <End Type="TestDBWpfModel1.logins" Role="logins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="logins">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacti__playe__09A971A2">
+    <End Type="TestDBWpfModel1.Players" Role="Players" Multiplicity="0..1" />
+    <End Type="TestDBWpfModel1.Transactions" Role="Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="player_id" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="player_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Card">
+    <Key>
+      <PropertyRef Name="id_card" />
+    </Key>
+    <Property Name="id_card" Type="Int32" Nullable="false" />
+    <Property Name="money" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HistoryMatches">
+    <Key>
+      <PropertyRef Name="id_match" />
+    </Key>
+    <Property Name="id_match" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="postavil" Type="Int32" />
+    <Property Name="result" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
