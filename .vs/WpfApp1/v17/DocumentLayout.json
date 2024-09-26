@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\marse\\Desktop\\Casik\\WpfApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{078B2C78-AB97-4D27-A421-9967008F3E4B}|WpfApp1\\WpfApp1.csproj|C:\\Users\\marse\\Desktop\\Casik\\WpfApp1\\wpfapp1\\pages\\gameselection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{078B2C78-AB97-4D27-A421-9967008F3E4B}|WpfApp1\\WpfApp1.csproj|c:\\users\\marse\\desktop\\casik\\wpfapp1\\wpfapp1\\pages\\gameselection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{078B2C78-AB97-4D27-A421-9967008F3E4B}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\pages\\gameselection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{078B2C78-AB97-4D27-A421-9967008F3E4B}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\pages\\listusers.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{078B2C78-AB97-4D27-A421-9967008F3E4B}|WpfApp1\\WpfApp1.csproj|c:\\users\\marse\\desktop\\casik\\wpfapp1\\wpfapp1\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{078B2C78-AB97-4D27-A421-9967008F3E4B}|WpfApp1\\WpfApp1.csproj|C:\\Users\\marse\\Desktop\\Casik\\WpfApp1\\wpfapp1\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{078B2C78-AB97-4D27-A421-9967008F3E4B}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -34,8 +34,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -44,7 +48,7 @@
               "RelativeDocumentMoniker": "WpfApp1\\Pages\\GameSelection.xaml.cs",
               "ToolTip": "C:\\Users\\marse\\Desktop\\Casik\\WpfApp1\\WpfApp1\\Pages\\GameSelection.xaml.cs",
               "RelativeToolTip": "WpfApp1\\Pages\\GameSelection.xaml.cs",
-              "ViewState": "AQIAAGUAAAAAAAAAAAAmwHMAAAA/AAAA",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAmwGcAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T05:04:51.22Z",
               "EditorCaption": ""
@@ -58,8 +62,7 @@
               "ToolTip": "C:\\Users\\marse\\Desktop\\Casik\\WpfApp1\\WpfApp1\\Pages\\CardsPage.xaml",
               "RelativeToolTip": "WpfApp1\\Pages\\CardsPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-17T05:04:57.762Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T05:04:57.762Z"
             },
             {
               "$type": "Document",
@@ -71,8 +74,7 @@
               "RelativeToolTip": "WpfApp1\\Pages\\LoginPage.xaml.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAAACIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T05:01:40.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T05:01:40.898Z"
             },
             {
               "$type": "Document",
@@ -84,8 +86,7 @@
               "RelativeToolTip": "WpfApp1\\Pages\\CardsPage.xaml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwD8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T22:37:49.278Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-16T22:37:49.278Z"
             },
             {
               "$type": "Document",
@@ -96,8 +97,7 @@
               "ToolTip": "C:\\Users\\marse\\Desktop\\Casik\\WpfApp1\\WpfApp1\\Pages\\ListUsers.xaml",
               "RelativeToolTip": "WpfApp1\\Pages\\ListUsers.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-16T22:40:51.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-16T22:40:51.283Z"
             },
             {
               "$type": "Document",
@@ -109,8 +109,7 @@
               "RelativeToolTip": "WpfApp1\\Pages\\ListUsers.xaml.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAD4vx0AAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T22:40:48.092Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-16T22:40:48.092Z"
             }
           ]
         }

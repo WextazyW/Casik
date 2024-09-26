@@ -12,5 +12,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db/modeldb.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db/modeldbcasik.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db/modeldbcasik.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("%d0%b1%d0%b4%d1%88%d0%ba%d0%b0/wpf.sql")]
 
 

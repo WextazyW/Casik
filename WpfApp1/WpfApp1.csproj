@@ -269,6 +269,7 @@
       <DependentUpon>ModelDBCasik.edmx</DependentUpon>
       <LastGenOutput>ModelDBCasik.cs</LastGenOutput>
     </Content>
+    <Content Include="бдшка\WPF.sql" />
     <Resource Include="PNG\crashGame.png" />
     <Resource Include="PNG\3.png" />
     <Resource Include="PNG\2.png" />
